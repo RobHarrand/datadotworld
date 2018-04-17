@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "shinyServer(function(input, output, session) {\n  \n  output$trendPlot <- renderPlotly({\n    \n    if (length(input$name) == 0) {\n      print(\"Please select at least one country\")\n    } else {\n      df_trend <- dt[dt$Name == input$name, ]\n      ggplot(df_trend) +\n        # geom_line(aes(x = xq, y = Ideal.point, by = Name, color = Name)) +\n        # labs(x = \"Year\", y = \"Ideology\", title = \"Ideal Points for Countries\") +\n        # scale_colour_hue(\"clarity\", l = 70, c = 150) + ggthemes::theme_few()\n        \n        geom_line(aes(x = xq, y = y, by = Name)) +\n        labs(x = \"Year\", y = \"Ideology\", title = \"Ideal Points for Countries\") +\n        scale_colour_hue(\"clarity\", l = 70, c = 150)\n        \n    }\n    \n  })\n})",
+    "created" : 1493064990707.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1121900896",
+    "id" : "5F956395",
+    "lastKnownWriteTime" : 1493066200,
+    "last_content_update" : 1493066200895,
+    "path" : "C:/Users/rob.harrand/Dropbox/data.world/hdi/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+        "chunk_rendered_width" : "650",
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

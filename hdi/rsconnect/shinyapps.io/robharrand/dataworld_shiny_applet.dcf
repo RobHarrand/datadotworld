@@ -1,0 +1,11 @@
+name: dataworld_shiny_applet
+title: data.world Shiny Applet
+account: robharrand
+server: shinyapps.io
+appId: 175172
+bundleId: 802940
+url: https://robharrand.shinyapps.io/dataworld_shiny_applet/
+when: 1493122790.18793
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: EF_GDP.csv|GDI_tidied.csv|GDI_tidied.xls|hdi.R|HDI_tidied.csv|MPI_tidied.csv|UN.R|laurel-2016-human-development-data/Gender Development Index (GDI).xls|laurel-2016-human-development-data/Gender Inequality Index.xls|laurel-2016-human-development-data/Human Development Index and its components.xls|laurel-2016-human-development-data/Inequality-adjusted Human Development Index.xls|laurel-2016-human-development-data/Multidimensional Poverty Index_ changes over time.xlsx|laurel-2016-human-development-data/Multidimensional Poverty Index_ developing countries.xls|laurel-2016-human-development-data/Trends in the Human Development Index, 1990-2015.xls

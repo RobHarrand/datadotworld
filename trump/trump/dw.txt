@@ -1,0 +1,10 @@
+Hi, I've had a play with this (in R). I've done the following...
+
+- Stripped the tweet texts of URLs and non-alphanumeric characters
+- Used a package called [RSentiment](https://cran.r-project.org/web/packages/RSentiment/index.html) to estimate the sentiment of each tweet
+- Arbitrarily assigned the sentiments numerical values (very positive = 2, positive = 1, neutral = 0, negative = -1, very negative = -2)
+- Create a running cumulative 'score' based upon the sentiments
+- Downloaded data for the Dow Jones Industrial Average from [here](https://fred.stlouisfed.org/series/DJIA/downloaddata)
+- Plotted everything in Plotly (x-axis = date, y-axis = cumulative sentiment 'score', colour = sentiment category, size = number of retweets)
+
+Have a look here

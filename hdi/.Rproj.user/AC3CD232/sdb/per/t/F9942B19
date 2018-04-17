@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "opts = read.csv('opts.csv')\n\nshinyUI(fluidPage(\n  \n  # Application title\n  titlePanel(\"data.world: HDI, MPI, GDI & EF Data\"),\n  \n  sidebarPanel(\n    selectInput(inputId = \"select1\", label = \"Select x-axis variable\", \n                choices = opts$x),\n    selectInput(inputId = \"select2\", label = \"Select y-axis variable\", \n                choices = opts$x),\n    selectInput(inputId = \"select3\", label = \"Select point-size variable (auto-scaled)\", \n                choices = opts$x),\n    \n    checkboxGroupInput(\"checkGroup\", label = h4(\"Log axes?\"), \n                       choices = list(\"Log x-axis\" = 1, \"Log y-axis\" = 2)),\n    \n    tags$hr(style=\"border-color: black;\"),\n    h4(\"All data taken from data.world, specifically, from the discussion on Comparing Multi-dimensional Poverty Index and Ecological Footprint\"),\n    h5(\" \"),\n    a(\"data.world\", href=\"https://data.world/\", target=\"_blank\"),\n    h5(\" \"),\n    a(\"Discussion link\", href=\"https://data.world/footprint/nfa-2017-edition/discuss/10657\", target=\"_blank\"),\n    h5(\" \"),\n    tags$hr(style=\"border-color: black;\"),\n    h5(\"Created by @tentotheminus9\"),\n    h5(\"Last update 25th April 2017\")\n\n  ),\n  \n  # Show a plot of the generated distribution\n  mainPanel(\n    plotlyOutput('plot1', width = \"1200px\", height = \"1200px\")\n  )\n)\n)",
+    "created" : 1493064934669.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3209148469",
+    "id" : "F9942B19",
+    "lastKnownWriteTime" : 1493121099,
+    "last_content_update" : 1493121099,
+    "path" : "C:/Users/rob.harrand/Dropbox/data.world/hdi/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+        "chunk_rendered_width" : "650",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

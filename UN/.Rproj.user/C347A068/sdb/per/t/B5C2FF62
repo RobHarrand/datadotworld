@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(plotly)\n\nGDI = read.csv('GDI_tidied.csv', stringsAsFactors = T, header = T)\nHDI = read.csv('HDI_tidied.csv', stringsAsFactors = T, header = T)\nMPI = read.csv('MPI_tidied.csv', stringsAsFactors = T, header = T)\n\nMPI$Population_in_MDP_k = gsub(\",\", \".\",  MPI$Population_in_MDP_k)\nMPI$Population_in_MDP_k = as.numeric(MPI$Population_in_MDP_k)\n\nall = merge(GDI, HDI, by.x = 'Country', by.y = 'Country')\nall = merge(all, MPI, by.x = 'Country', by.y = 'Country', all.x = T)\n\nall$Year_of_survey = gsub(\"/$|M|D|N|P\", \"\", as.character(all$MPI_year_and_survey))\nall$Year_of_survey = as.factor(all$Year_of_survey)\n\n\nSys.setenv(\"plotly_username\"=\"robh\")\nSys.setenv(\"plotly_api_key\"=\"ILTpvNQjVCzCgH99TgYW\")\n\np = plot_ly(x = all$Human_Development_Index, \n            y = all$MPI_index,\n            alpha= 0.70,\n            mode = \"markers\", \n            type = \"scatter\",\n            showlegend = F, \n            color = all$Country,\n            size = I(sqrt(all$Population_in_MDP_k)*2), \n            hoverinfo = \"text\", \n            text = paste(toupper(all$Country),\n                    \"</br>Human Development Index: \", \n                    all$Human_Development_Index,\n                    \"</br>Multi-dimensional Poverty Index: \", \n                    all$MPI_index,\n                    \"</br>Life expectency at birth: \",\n                    all$Life_expectancy_at_birth,\n                    \"</br>Population in Multidimensional Poverty (thousands): \",\n                    all$Population_in_MDP_k,\n                    \"</br>MPI Year of survey: \",\n                    all$Year_of_survey)) %>%\n\nlayout(title =\"HDI vs MPI\", \n       annotations = list(text = paste(\"Point size proportional to </br> Population in Multi-dimensional Poverty </br> (thousands)\"), \n                      x = 0.7,\n                      y = 0.5,\n                      showarrow = F,\n                      font = list(size = 12,\n                                  color = 'white')),\n       titlefont = t,\n       plot_bgcolor='black',\n       xaxis = list(title = \"Human Development Index\", \n                    titlefont = t),\n       yaxis = list(title = \"Multi-dimensional Poverty Index\", \n                    titlefont = t))\n\n\nplotly_POST(p, sharing = 'public')\n\n\n\np\n",
+    "created" : 1492760864535.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2718404975",
+    "id" : "B5C2FF62",
+    "lastKnownWriteTime" : 1492768837,
+    "last_content_update" : 1492768837,
+    "path" : "C:/Users/rob.harrand/Desktop/WORK/Kaggle/dataworld/UN/UN.R",
+    "project_path" : "UN.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
